@@ -2,7 +2,7 @@
 
 A React component for Materials Cloud header, built just with CSS.
 
-See `App.js` on how to use it.
+See `src/App.js` on how to use it.
 
 # Getting Started with Create React App
 
