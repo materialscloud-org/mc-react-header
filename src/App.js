@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import MaterialsCloudHeader from "./MaterialsCloudHeader";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MaterialsCloudHeader
+        activeSection={"discover"} // see the corresponding key in MaterialsCloudHeader/Navbar.js
+        breadcrumbsPath={[
+          { name: "Work", link: "https://www.materialscloud.org/work" },
+          { name: "Tools", link: "https://www.materialscloud.org/work/tools" },
+          { name: "SeeK-path", link: null },
+        ]}
+      >
+        <h3>Test content</h3>
+        <p>Test content</p>
+      </MaterialsCloudHeader>
     </div>
   );
 }
