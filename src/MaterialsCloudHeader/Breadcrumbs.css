@@ -18,6 +18,7 @@ ul.breadcrumb {
 /* Display list items side by side */
 ul.breadcrumb li {
   display: inline;
+  line-height: 1.0;
 }
 
 /* Add a color to all links inside the list */

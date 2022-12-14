@@ -10,7 +10,8 @@
   float: left;
   display: block;
   text-align: center;
-  padding: 7px 15px 1px 20px;
+  font-size: 0px;
+  padding: 7px 15px 5px 20px;
   /* border: 1px solid green; */
 }
 
