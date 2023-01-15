@@ -58,6 +58,7 @@
   padding: 21px 20px;
   /* border: 1px solid green; */
   /* margin: 0; Important for vertical align on mobile phones */
+  user-select: none;
 }
 
 .dropdown-content {
