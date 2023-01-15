@@ -4,7 +4,7 @@ import "./Breadcrumbs.css";
 
 function Breadcrumbs(props) {
   return (
-    <ul className="breadcrumb">
+    <ul className="mc-breadcrumb">
       {props.breadcrumbsPath.map((el, i) => {
         return (
           <li key={i}>

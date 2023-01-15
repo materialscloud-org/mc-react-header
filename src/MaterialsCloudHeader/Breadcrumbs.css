@@ -1,5 +1,5 @@
 /* Style the list */
-ul.breadcrumb {
+ul.mc-breadcrumb {
   padding: 7px 10px 7px 20px;
   list-style: none;
   background-color: #f5f5f5;
@@ -23,7 +23,7 @@ ul.breadcrumb {
 
 
 /* Display list items side by side */
-ul.breadcrumb li {
+ul.mc-breadcrumb li {
   display: inline;
   line-height: 1.0;
   margin-right: 46px;
@@ -31,7 +31,7 @@ ul.breadcrumb li {
 }
 
 /* Add a color to all links inside the list */
-ul.breadcrumb li a {
+ul.mc-breadcrumb li a {
   color: #303f9f;
   text-decoration: none;
   /* position: relative; */
@@ -42,11 +42,11 @@ ul.breadcrumb li a {
 
 
 /* Add a color on mouse-over, if the <a> has href defined */
-ul.breadcrumb li a[href]:hover {
+ul.mc-breadcrumb li a[href]:hover {
   text-decoration: underline;
 }
 
-.breadcrumb li a::after {
+.mc-breadcrumb li a::after {
   content: " ";
   display: block;
   width: 0;
@@ -64,7 +64,7 @@ ul.breadcrumb li a[href]:hover {
   transform: translate(30px, 0);
 }
 
-.breadcrumb li a::before {
+.mc-breadcrumb li a::before {
   content: " ";
   display: block;
   width: 0;
@@ -82,18 +82,14 @@ ul.breadcrumb li a[href]:hover {
   transform: translate(32px, 0);
 }
 
-/* .breadcrumb2 li:first-child a {
-  margin-left: 8px;
-} */
-
-.breadcrumb li:last-child a {
+.mc-breadcrumb li:last-child a {
   background: transparent !important;
   color: #303f9f;
   /* pointer-events: none;
   cursor: default; */
 }
-.breadcrumb li:last-child a::after,
-.breadcrumb li:last-child a::before {
+.mc-breadcrumb li:last-child a::after,
+.mc-breadcrumb li:last-child a::before {
   border: 0;
   display: none;
 }
