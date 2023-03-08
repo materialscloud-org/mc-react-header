@@ -46,6 +46,11 @@ ul.mc-breadcrumb li a[href]:hover {
   text-decoration: underline;
 }
 
+/* prevent _reboot.scss from bootstrap to override this */
+ul.mc-breadcrumb li a:not([href]):hover {
+  color: #303f9f;
+}
+
 .mc-breadcrumb li a::after {
   content: " ";
   display: block;
