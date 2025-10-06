@@ -5,10 +5,6 @@ import Navbar from "./Navbar";
 import Breadcrumbs from "./Breadcrumbs";
 
 class MaterialsCloudHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <div className="main-container">

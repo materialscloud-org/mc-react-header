@@ -83,13 +83,13 @@ class DropdownMenu extends React.Component {
     }
     return (
       <div ref={this.setWrapperRef} className="more-dropdown">
-        <a className="more-btn" onClick={this.toggleDropdown}>
+        <span className="more-btn" onClick={this.toggleDropdown}>
           More <i className="fa fa-caret-down"></i>
-        </a>
+        </span>
         <div className={dropdownContentClass}>
           {Object.keys(dropdownSections).map((element, i) => {
             let cname = "";
-            if (element == this.props.activeSection) cname = "active";
+            if (element === this.props.activeSection) cname = "active";
             return (
               <a
                 key={i}
@@ -115,7 +115,7 @@ class Navbar extends React.Component {
         </a>
         {Object.keys(mainSections).map((key, i) => {
           let cname = "mc-navlink";
-          if (key == this.props.activeSection) cname += " active";
+          if (key === this.props.activeSection) cname += " active";
           return (
             <a key={i} className={cname} href={mainSections[key].link}>
               {mainSections[key].name}
