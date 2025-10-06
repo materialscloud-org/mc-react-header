@@ -3,7 +3,7 @@ import "./Navbar.css";
 import Logo from "./assets/mcloud_logo.png";
 
 import "font-awesome/css/font-awesome.min.css";
-import React from "react";
+import { useEffect, useRef, useState } from "react";
 
 const mainSections = {
   learn: { name: "LEARN", link: "https://www.materialscloud.org/learn" },
@@ -44,88 +44,61 @@ const dropdownSections = {
   },
 };
 
-class DropdownMenu extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { dropdownOpen: false };
-    this.toggleDropdown = this.toggleDropdown.bind(this);
-    this.setWrapperRef = this.setWrapperRef.bind(this);
-    this.handleClickOutside = this.handleClickOutside.bind(this);
-  }
+const DropdownMenu = ({ activeSection }) => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const wrapperRef = useRef(null);
 
-  componentDidMount() {
-    document.addEventListener("mousedown", this.handleClickOutside);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClickOutside);
-  }
-
-  setWrapperRef(node) {
-    this.wrapperRef = node;
-  }
-
-  handleClickOutside(event) {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      if (this.state.dropdownOpen) {
-        this.setState({ dropdownOpen: false });
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+        setDropdownOpen(false);
       }
     }
-  }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-  toggleDropdown() {
-    this.setState({ dropdownOpen: !this.state.dropdownOpen });
-  }
-  render() {
-    let dropdownContentClass = "dropdown-content";
-    if (this.state.dropdownOpen) {
-      dropdownContentClass += " dropdown-open";
-    }
-    return (
-      <div ref={this.setWrapperRef} className="more-dropdown">
-        <span className="more-btn" onClick={this.toggleDropdown}>
-          More <i className="fa fa-caret-down"></i>
-        </span>
-        <div className={dropdownContentClass}>
-          {Object.keys(dropdownSections).map((element, i) => {
-            let cname = "";
-            if (element === this.props.activeSection) cname = "active";
-            return (
-              <a
-                key={i}
-                className={cname}
-                href={dropdownSections[element].link}
-              >
-                {dropdownSections[element].name}
-              </a>
-            );
-          })}
-        </div>
-      </div>
-    );
-  }
-}
+  const toggleDropdown = () => setDropdownOpen((prev) => !prev);
 
-class Navbar extends React.Component {
-  render() {
-    return (
-      <div className="mc-navbar">
-        <a className="mc-navbrand" href="https://www.materialscloud.org/home">
-          <img src={Logo} height="50" alt="MC logo" />
-        </a>
-        {Object.keys(mainSections).map((key, i) => {
-          let cname = "mc-navlink";
-          if (key === this.props.activeSection) cname += " active";
+  const dropdownContentClass =
+    "dropdown-content" + (dropdownOpen ? " dropdown-open" : "");
+
+  return (
+    <div ref={wrapperRef} className="more-dropdown">
+      <span className="more-btn" onClick={toggleDropdown}>
+        More <i className="fa fa-caret-down" />
+      </span>
+      <div className={dropdownContentClass}>
+        {Object.keys(dropdownSections).map((element, i) => {
+          const { link, name } = dropdownSections[element];
+          const cname = element === activeSection ? "active" : "";
           return (
-            <a key={i} className={cname} href={mainSections[key].link}>
-              {mainSections[key].name}
+            <a key={i} className={cname} href={link}>
+              {name}
             </a>
           );
         })}
-        <DropdownMenu activeSection={this.props.activeSection} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+const Navbar = ({ activeSection }) => (
+  <div className="mc-navbar">
+    <a className="mc-navbrand" href="https://www.materialscloud.org/home">
+      <img src={Logo} height="50" alt="MC logo" />
+    </a>
+    {Object.keys(mainSections).map((key, i) => {
+      let cname = "mc-navlink";
+      if (key === activeSection) cname += " active";
+      return (
+        <a key={i} className={cname} href={mainSections[key].link}>
+          {mainSections[key].name}
+        </a>
+      );
+    })}
+    <DropdownMenu activeSection={activeSection} />
+  </div>
+);
 
 export default Navbar;

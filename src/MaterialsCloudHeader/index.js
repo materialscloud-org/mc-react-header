@@ -1,21 +1,16 @@
-import React from "react";
 import "./index.css";
 
 import Navbar from "./Navbar";
 import Breadcrumbs from "./Breadcrumbs";
 
-class MaterialsCloudHeader extends React.Component {
-  render() {
-    return (
-      <div className="main-container">
-        <Navbar activeSection={this.props.activeSection} />
-        <div className="content-container">
-          <Breadcrumbs breadcrumbsPath={this.props.breadcrumbsPath} />
-          {this.props.children}
-        </div>
-      </div>
-    );
-  }
-}
+const MaterialsCloudHeader = ({ activeSection, breadcrumbsPath, children }) => (
+  <div className="main-container">
+    <Navbar activeSection={activeSection} />
+    <div className="content-container">
+      <Breadcrumbs breadcrumbsPath={breadcrumbsPath} />
+      {children}
+    </div>
+  </div>
+);
 
 export default MaterialsCloudHeader;
