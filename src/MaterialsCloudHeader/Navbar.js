@@ -1,5 +1,6 @@
 import "./Navbar.css";
 
+import React from "react";
 import Logo from "./assets/mcloud_logo.png";
 
 import "font-awesome/css/font-awesome.min.css";
