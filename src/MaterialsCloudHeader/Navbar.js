@@ -3,7 +3,7 @@ import "./Navbar.css";
 import Logo from "./assets/mcloud_logo.png";
 
 import "font-awesome/css/font-awesome.min.css";
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const mainSections = {
   learn: { name: "LEARN", link: "https://www.materialscloud.org/learn" },
