@@ -1,5 +1,7 @@
 import "./App.css";
 
+import React from "react";
+
 import MaterialsCloudHeader from "./MaterialsCloudHeader";
 
 function App() {
@@ -9,7 +11,10 @@ function App() {
         activeSection={"discover"} // see the corresponding key in MaterialsCloudHeader/Navbar.js
         breadcrumbsPath={[
           { name: "Discover", link: "https://www.materialscloud.org/discover" },
-          { name: "Materials Cloud three-dimensional crystals database", link: "https://www.materialscloud.org/discover/mc3d" },
+          {
+            name: "Materials Cloud three-dimensional crystals database",
+            link: "https://www.materialscloud.org/discover/mc3d",
+          },
           { name: "test", link: null },
         ]}
       >
