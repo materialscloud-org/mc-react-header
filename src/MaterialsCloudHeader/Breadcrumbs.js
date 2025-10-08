@@ -1,8 +1,6 @@
 import "./Breadcrumbs.css";
 import React from "react";
 
-import React from "react";
-
 const Breadcrumbs = ({ breadcrumbsPath }) => (
   <ul className="mc-breadcrumb">
     {breadcrumbsPath.map((el, i) => {
