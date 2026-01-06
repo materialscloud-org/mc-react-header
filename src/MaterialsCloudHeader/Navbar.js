@@ -86,7 +86,7 @@ const DropdownMenu = ({ activeSection }) => {
 const Navbar = ({ activeSection }) => (
   <div className="mc-navbar">
     <a className="mc-navbrand" href="https://www.materialscloud.org/home">
-      <img src={Logo} height="50" alt="MC logo" />
+      <img src={Logo} loading="lazy" height="50" alt="MC logo" />
     </a>
     {Object.keys(mainSections).map((key, i) => {
       let cname = "mc-navlink";
