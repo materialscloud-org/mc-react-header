@@ -143,4 +143,8 @@
     padding: 4px 12px;
     min-width: 180px;
   }
+  .more-btn svg {
+    width: 14px;
+    height: 14px;
+  }
 }

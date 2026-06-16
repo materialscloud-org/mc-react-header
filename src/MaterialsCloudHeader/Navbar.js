@@ -2,7 +2,6 @@ import "./Navbar.css";
 
 import Logo from "./assets/mcloud_logo.png";
 
-import "font-awesome/css/font-awesome.min.css";
 import React, { useEffect, useRef, useState } from "react";
 
 const mainSections = {
@@ -66,7 +65,17 @@ const DropdownMenu = ({ activeSection }) => {
   return (
     <div ref={wrapperRef} className="more-dropdown">
       <span className="more-btn" onClick={toggleDropdown}>
-        More <i className="fa fa-caret-down" />
+        More{" "}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="4 2 18 20"
+          fill="currentColor"
+          style={{ verticalAlign: "middle" }}
+        >
+          <path d="M12 15l-7-7h14z" />
+        </svg>
       </span>
       <div className={dropdownContentClass}>
         {Object.keys(dropdownSections).map((element, i) => {
