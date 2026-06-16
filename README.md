@@ -9,13 +9,13 @@ Published to npm, install with `npm install mc-react-header`.
 ## Development
 
 ```bash
-npm install
-npm start
+pnpm install
+pnpm start
 ```
 
 To make a new version and publish to npm via GitHub Actions:
 
 ```bash
-npm version <major/minor/patch>
+pnpm version <major/minor/patch>
 git push --follow-tags
 ```
