@@ -2,7 +2,7 @@
 
 A React component for Materials Cloud header, built just with CSS.
 
-See `src/App.js` on how to use it.
+See `src/App.jsx` on how to use it.
 
 Published to npm, install with `npm install mc-react-header`.
 
