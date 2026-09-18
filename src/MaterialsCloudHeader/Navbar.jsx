@@ -2,7 +2,7 @@ import "./Navbar.css";
 
 import Logo from "./assets/mcloud_logo.png";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const mainSections = {
   learn: { name: "LEARN", link: "https://www.materialscloud.org/learn" },
@@ -39,6 +39,7 @@ const dropdownSections = {
   },
   restapi: {
     name: "Connect your REST API",
+
     link: "https://www.materialscloud.org/explore/connect",
   },
 };

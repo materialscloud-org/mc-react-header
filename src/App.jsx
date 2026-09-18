@@ -1,14 +1,12 @@
 import "./App.css";
 
-import React from "react";
-
 import MaterialsCloudHeader from "./MaterialsCloudHeader";
 
 function App() {
   return (
     <div className="App">
       <MaterialsCloudHeader
-        activeSection={"discover"} // see the corresponding key in MaterialsCloudHeader/Navbar.js
+        activeSection={"discover"} // see the corresponding key in MaterialsCloudHeader/Navbar.jsx
         breadcrumbsPath={[
           { name: "Discover", link: "https://www.materialscloud.org/discover" },
           {

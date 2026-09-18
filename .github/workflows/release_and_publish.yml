@@ -8,36 +8,33 @@ on:
 jobs:
   release_and_publish:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "24"
           registry-url: "https://registry.npmjs.org/"
+          cache: "pnpm"
 
-      - name: Enable pnpm
-        run: corepack enable
-
-      - name: Install dependencies
+      - name: Install project dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build
+      - name: Build the dist folder
         run: pnpm build
 
       - name: Create GitHub Release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
-          release_name: ${{ github.ref_name }}
-          draft: false
-          prerelease: false
 
       - name: Publish to npm
         run: pnpm publish --no-git-checks

@@ -10,7 +10,8 @@ Published to npm, install with `npm install mc-react-header`.
 
 ```bash
 pnpm install
-pnpm start
+pnpm run dev   # demo app with hot reload (Vite)
+pnpm build   # build the publishable library into dist/
 ```
 
 To make a new version and publish to npm via GitHub Actions:
