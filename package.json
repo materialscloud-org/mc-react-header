@@ -2,6 +2,10 @@
   "name": "mc-react-header",
   "version": "0.7.3",
   "author": "Kristjan Eimre <kristjan.eimre@epfl.ch>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/materialscloud-org/mc-react-header"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "exports": {
