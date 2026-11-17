@@ -15,6 +15,13 @@
   /* border: 1px solid green; */
 }
 
+/* Sized in CSS, not only by the img's height attribute: CSS resets such as
+   Tailwind's preflight (img { height: auto }) override the attribute. */
+.mc-navbar .mc-navbrand img {
+  height: 50px;
+  width: auto;
+}
+
 .mc-navbar .mc-navlink {
   float: left;
   display: block;
